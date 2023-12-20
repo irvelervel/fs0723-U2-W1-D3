@@ -1,0 +1,50 @@
+main {
+  display: flex;
+  /* serve ad affiancare le cards */
+  flex-wrap: wrap;
+  /* serve a mandare a capo le cards se non c'è spazio */
+}
+
+.card {
+  max-width: 300px;
+  height: 500px;
+  margin-right: 1em;
+  box-shadow: 6px 5px 11px -2px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 6px 5px 11px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 6px 5px 11px -2px rgba(0, 0, 0, 0.75);
+  /* rendo la card un contenitore flessibile
+    in modo da poter utilizzare nei suoi figli
+    l'eventuale spazio residuo causato da 
+    un contenuto testuale troppo corto per riempire
+    tutta l'altezza definita da 500px */
+  display: flex;
+  flex-direction: column;
+  /* column perchè gli elementi devono incolonnarsi */
+}
+
+.card img {
+  width: 100%;
+}
+
+.card div {
+  padding: 1em;
+  flex-grow: 1; /* mangia lo spazio avanzato nella card */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* rendo questo flex child ANCHE un flex container */
+  /* in modo da poter ridistribuire lo spazio vuoto
+  intorno ai suoi elementi */
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.card button {
+  width: 100%;
+  background-color: darkgrey;
+  border: none;
+  padding: 0.5em 0;
+  color: white;
+}
